@@ -1,20 +1,37 @@
---- Input: One or more videos containing faces. The program will initiate:
+# Face Tracking & Analysis Pipeline
 
-1. Face Extraction: Video frames are processed to detect and extract face images.
+## Overview
+This project extracts, encodes, and clusters faces from videos. The system identifies the same person appearing across multiple frames or videos.
 
-2. Encoding: Each extracted face is encoded (i.e., converted into a feature representation).
+### **Pipeline Steps**
+1. **Face Extraction**  
+   - Detect and extract faces from video frames.
 
-3. Analysis + Clustering: Faces with similar encodings are grouped together (clustered), so that the same person appearing across multiple frames/videos is identified as belonging to the same cluster.
+2. **Encoding**  
+   - Convert each extracted face into a feature representation.
 
---- System Deployment Workflow and Monitoring
-The services run on 3 different containers deployed across 2 different Virtual Machines (VMs). There is a separate module for Cloud monitoring, health checks, and logging of the 3 containers, which then builds a Dash app for reporting.
+3. **Analysis & Clustering**  
+   - Group similar faces into clusters, identifying the same individual across multiple videos.
 
-1. Flow
-<img width="6631" height="1696" alt="Face Tracking Workflow-2025-11-24-092731" src="https://github.com/user-attachments/assets/8f1475a5-c6f7-48f5-859a-57705008efbd" />
+---
 
-2. Dashapp
+## System Deployment & Monitoring
+- The services run in **3 containers** across **2 Virtual Machines (VMs)**.
+- A **Cloud monitoring module** handles:
+  - Health checks
+  - Logging
+  - Dash app reporting
+
+### **Workflow**
+![Face Tracking Workflow](https://github.com/user-attachments/assets/8f1475a5-c6f7-48f5-859a-57705008efbd)
+
+### **Dash Monitoring App**
+- Provides real-time monitoring and reporting.
+
 ![Dashapp](https://github.com/user-attachments/assets/e060f967-3202-46d5-a46f-d39334b6a878)
 
+---
 
---- Docker Container Service Link
-View all 3 Docker containers service in this link: https://hub.docker.com/repositories/tutubinbin
+## Docker Containers
+All services are containerized. You can find them here:  
+[Docker Hub Repository](https://hub.docker.com/repositories/tutubinbin)
